@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="wwwroot\files\**" />
+    <Content Remove="wwwroot\files\**" />
+    <EmbeddedResource Remove="wwwroot\files\**" />
+    <None Remove="wwwroot\files\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controllers\AccountController.cs" />
+    <Content Include="Controllers\BaseApiController.cs" />
+    <Content Include="Controllers\BasketController.cs" />
+    <Content Include="Controllers\BuggyController.cs" />
+    <Content Include="Controllers\Dashboard\DashboardProduct.cs" />
+    <Content Include="Controllers\OrdersController.cs" />
+    <Content Include="Controllers\PaymentsController.cs" />
+    <Content Include="Controllers\ProductsController.cs" />
+    <Content Include="Controllers\WeatherForecastController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="Microsoft.AspNet.SignalR.Core" Version="2.4.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.ML" Version="1.6.0" />
+    <PackageReference Include="Microsoft.ML.Recommender" Version="0.18.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SentimentModel\SentimentModel.csproj" />
+    <ProjectReference Include="..\Talabat.BLL\Talabat.BLL.csproj" />
+  </ItemGroup>
+  <ItemGroup Label="SentimentModel">
+    <None Include="SentimentModel.consumption.cs">
+      <DependentUpon>SentimentModel.mbconfig</DependentUpon>
+    </None>
+    <None Include="SentimentModel.training.cs">
+      <DependentUpon>SentimentModel.mbconfig</DependentUpon>
+    </None>
+    <None Include="SentimentModel.zip">
+      <DependentUpon>SentimentModel.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

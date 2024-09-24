@@ -1,0 +1,40 @@
+﻿<!--<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Chat App</title>
+    <style>
+        .container{
+            padding:4rem;
+            margin:4rem;
+        }
+        #publicTalk{
+            background-color:#09c;
+            border: thick solid #808080;
+        }
+    </style>
+</head>
+<body>
+    <div id="publicTalk" class="container">
+        <input type="text" id="messageInp" />
+        <input type="text" id="senderId" />
+        <input type="text" id="ReceiverId" />
+        <input type="submit" id="sendMessageBtn" value="Send" />-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Chat App</title>
+</head>
+<body>
+    <div id="messages"></div>
+    <input type="text" id="message" />
+    <button id="send">Send</button>
+    <ul id="con"></ul>
+
+    <script src="../lib/signalr/dist/browser/signalr.js"></script>
+    <script src="../lib/signalr/dist/browser/signalr.min.js"></script>
+    <script src="../js/chat.js"></script>
+
+</body>
+</html>
